@@ -7,6 +7,8 @@
 </head>
 
 <body> 
+<div class="center">
+  <div class="white-background">
   <div class="center">
     <h1>input radio</h1>
     <p >É uma coleção de Radio Buttons (Botões de Radio) que descrevem uma série de opções que so podem ser marcadas
@@ -61,16 +63,31 @@
     </div>
 
     <div>
-      <input type="submit" name="Enviar">
+      <button name="change_img" onclick="change_img_func()">se clicar vai aparecer o melhor     </button>
     </div>
-  
+  <img src="fallen.png" alt="fallen" class="center" id="minha_imagem" width="700px">
 </form> 
   </div>
-
+</div>
+</div>
 </body>
 <script type="text/javascript">
-function botoes_radio(argument) {
-  
+function change_img_func() {
+  let src= document.getElementsById('minha_imagem').src;
+  let splitted = src.split('/'); 
+let old = splitted[splitted.lenght - 1];
+let filename;
+
+if (old ==='fallen.png') {
+filename = 'download.jpg';
+
+} else {
+  filename 'goku.png';
+}
+src= src.replace(old, filename);
+document.getElementsById('minha_imagem').src = src;
+
+console.log ('imagem trocada!');
 }
 
 
